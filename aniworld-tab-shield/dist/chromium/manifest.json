@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "AniWorld Total Tab Shield",
+  "version": "2.3.0",
+  "description": "Werbe-Popup-Schutz und Anime-Skip-Buttons für Openings und Endings auf AniWorld, auch im Vollbild.",
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.anime-skip.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js",
+        "skip-fullscreen.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "skip-player.js"
+      ],
+      "run_at": "document_idle",
+      "world": "ISOLATED",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "minimum_chrome_version": "119"
+}
