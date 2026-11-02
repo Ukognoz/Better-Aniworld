@@ -1,0 +1,13 @@
+{
+  "name": "aniworld-tab-shield",
+  "version": "2.3.0",
+  "private": true,
+  "description": "Browser extension for AniWorld popup protection and Anime-Skip controls",
+  "scripts": {
+    "test": "node --test",
+    "build": "python3 scripts/build.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
